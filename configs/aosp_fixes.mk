@@ -13,6 +13,17 @@
 # limitations under the License.
 
 # Google property overides
+
+
+# This could be trouble
+# ro.control_privapp_permissions=enforce
+# ro.build.selinux=1
+
+# Options For Default Sounds
+# ro.config.notification_sound=Chime.ogg
+# ro.config.alarm_alert=Flow.ogg
+# ro.config.ringtone=Zen.ogg 
+
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
@@ -23,7 +34,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dataroaming=false \
     ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
     ro.setupwizard.rotation_locked=true
-    #    ro.control_privapp_permissions=enforce \
+
 
 # Proprietary latinime libs needed for Keyboard swyping
 PRODUCT_COPY_FILES += \
@@ -37,3 +48,7 @@ PRODUCT_COPY_FILES +=  \
 # Clean up packages cache to avoid wrong strings and resources
 PRODUCT_COPY_FILES += \
     vendor/nexus/prebuilt/bin/clean_cache.sh:system/bin/clean_cache.sh
+
+# Google Sounds
+$(call inherit-product-if-exists, frameworks/base/data/sounds/GoogleAudio.mk)
+

@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ABC_VERSION := $(PLATFORM_VERSION)-$(shell date +%Y%m%d)
+ABC_VERSION := $(PLATFORM_VERSION)-$(shell date +%Y-%m-%d_%H%M)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.abc.version=$(ABC_VERSION)
